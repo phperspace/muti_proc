@@ -3,13 +3,13 @@
 ## 功能    
 1.实现多进程模型      
 2.支持worker平滑重启    
-3.支持worker平滑退出 
+3.支持worker平滑退出    
 4.可配置worker超时退出     
 
 ## 原理   
-1.master负责监控和保证固定worker数量  
+1.master负责监控和保证固定worker数量    
 2.基于共享内存进行进程间通信    
-3.通过对本地文件flock实现读锁，解决共享内存的可重复读&&read-then-write问题。
+3.通过对本地文件flock实现读锁，解决共享内存的可重复读&&read-then-write问题。    
     
 # 使用    
 1.必须要先引入autoload.php，如下：  
