@@ -12,7 +12,6 @@
 3.通过对本地文件flock实现读锁，解决共享内存的可重复读&&read-then-write问题。
     
 # 使用    
-只需继承类，并覆盖_work()方法，然后通过命令行启动继承类的start方法即可。    
 1.必须要先引入autoload.php，如下：  
 
 	require_once '../autoload.php';  
