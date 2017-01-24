@@ -3,7 +3,8 @@
 ## 功能    
 1.实现多进程模型      
 2.支持worker平滑重启    
-3.可配置worker超时退出    
+3.支持worker平滑退出 
+4.可配置worker超时退出     
 
 ## 原理   
 1.master负责监控和保证固定worker数量  
@@ -12,15 +13,15 @@
     
 # 使用    
 只需继承类，并覆盖_work()方法，然后通过命令行启动继承类的start方法即可。    
-1、必须要先引入autoload.php，如下：  
+1.必须要先引入autoload.php，如下：  
 
 	require_once '../autoload.php';  
 	
-2、引入相关的MutiProc类及命名空间，如下：  
+2.引入相关的MutiProc类及命名空间，如下：  
 	
 	use Src\Space\Phper\Muti\MutiProc;  
 	
-3、继承MutiProc类，并实现_work($jobID)方法：  
+3.继承MutiProc类，并实现_work($jobID)方法：  
 
 	class MyMutiProc extends MutiProc
 	{
@@ -38,9 +39,18 @@
 	
 	
 	}
-4、启动    
+	
+4.启动    
 
 	$proc = new MyMutiProc();
     $proc->start();
 
+5.平滑退出    
 
+	$proc = new MyMutiProc();
+    $proc->stop();
+
+6.worker平滑重启    
+
+	$proc = new MyMutiProc();
+    $proc->restartWorker();
