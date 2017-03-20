@@ -375,7 +375,7 @@ abstract class MutiProc
         
         // timeout 检查， -1 表示不限
         if (- 1 != $this->_maxExcuteTime) {
-            $passedMs = (int) (1000 * (microtime(TRUE) - $currentJobs['proc_list'][$jobID]['fork_time']));
+            $passedMs = (int) (microtime(TRUE) - $currentJobs['proc_list'][$jobID]['fork_time']);
             if ($passedMs > $this->_maxExcuteTime) {
                 return TRUE;
             }
